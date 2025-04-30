@@ -9,7 +9,7 @@ import { Transaction } from './models/transaction.model';
   providedIn: 'root'
 })
 export class ApiService {
-  private baseUrl: string = 'http://localhost:8080/api'; // URL do backend Java
+  private baseUrl: string = 'http://localhost:3000'; 
 
   constructor(private http: HttpClient) { }
 

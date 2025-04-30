@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule, FormsModule, Validators, FormGroup } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-customer-registration',
-  imports: [FormsModule],
+  imports: [FormsModule, ReactiveFormsModule],
   standalone: true,
   templateUrl: './customer-registration.component.html',
   styleUrls: ['./customer-registration.component.css']
@@ -22,11 +22,11 @@ export class CustomerRegistrationComponent {
   }
 
   onSubmit() {
+    console.log(this.registrationForm);
     if (this.registrationForm.valid) {
       this.apiService.registerCustomer(this.registrationForm.value).subscribe(response => {
         // Handle successful registration
         console.log('Customer registered successfully', response);
-        this.registrationForm.reset();
       }, error => {
         // Handle registration error
         console.error('Error registering customer', error);

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
 import { Account } from '../../services/models/account.model';
 
 @Component({
   selector: 'app-account-registration',
-  imports: [FormsModule],
+  imports: [FormsModule, ReactiveFormsModule],
   standalone: true, 
   templateUrl: './account-registration.component.html',
   styleUrls: ['./account-registration.component.css']

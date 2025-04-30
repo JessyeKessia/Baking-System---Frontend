@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common'; // Importe o CommonModule
   imports: [FormsModule, CommonModule]
 })
 export class CustomerInfoComponent implements OnInit {
-  customerId: string = ''; // ID do cliente fornecido pelo usuário
+  customerId: string = ''; 
   customer: Customer | null = null;
   errorMessage: string | null = null;
 
