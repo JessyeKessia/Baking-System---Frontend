@@ -1,0 +1,33 @@
+.transaction-reports {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.transaction-reports h2 {
+    color: #333;
+}
+
+.transaction-reports table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.transaction-reports th, .transaction-reports td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.transaction-reports th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.transaction-reports tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.transaction-reports tr:hover {
+    background-color: #ddd;
+}
