@@ -22,8 +22,8 @@ form {
   
   input,
   select {
-    width: 100%;
-    padding: 10px;
+    width: 388px;
+    padding: 6px;
     border: 1px solid var(--cor-4); /* Borda com cor secundária */
     border-radius: 4px;
     font-size: 16px;
