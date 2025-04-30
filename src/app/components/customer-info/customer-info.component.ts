@@ -1,34 +1,38 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { Customer } from '../../services/models/customer.model';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common'; // Importe o CommonModule
 
 @Component({
   selector: 'app-customer-info',
   templateUrl: './customer-info.component.html',
-  styleUrls: ['./customer-info.component.css']
+  styleUrls: ['./customer-info.component.css'],
+  standalone: true,
+  imports: [FormsModule, CommonModule]
 })
 export class CustomerInfoComponent implements OnInit {
-  customerId!: string;
+  customerId: string = ''; // ID do cliente fornecido pelo usuário
   customer: Customer | null = null;
   errorMessage: string | null = null;
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService) {}
 
-  ngOnInit(): void {
-    this.customerId = '1'; // This should be dynamically set based on user input or routing
-    this.fetchCustomerInfo();
-  }
+  ngOnInit(): void {}
 
   fetchCustomerInfo(): void {
-    this.apiService.getCustomerById(this.customerId).subscribe(
-      (data: Customer) => {
-        this.customer = data;
-        this.errorMessage = null;
-      },
-      (error) => {
-        this.errorMessage = 'Customer not found';
-        this.customer = null;
-      }
-    );
+    if (this.customerId) {
+      console.log('Fetching customer info for ID:', this.customerId);
+      this.apiService.getCustomerById(this.customerId).subscribe(
+        (data: Customer) => {
+          this.customer = data;
+          this.errorMessage = null;
+        },
+        (error) => {
+          this.errorMessage = 'Customer not found';
+          this.customer = null;
+        }
+      );
+    }
   }
 }
