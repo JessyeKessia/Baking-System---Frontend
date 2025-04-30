@@ -4,4 +4,5 @@ export interface Account {
     accountNumber: string;
     accountType: string;
     initialBalance: number;
+    balance: number; 
 }
