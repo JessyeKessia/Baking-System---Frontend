@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { Customer } from '../../services/models/customer.model';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common'; // Importe o CommonModule
 
 @Component({
   selector: 'app-customer-info',
   templateUrl: './customer-info.component.html',
   styleUrls: ['./customer-info.component.css'],
   standalone: true,
-  imports: [FormsModule]
+  imports: [FormsModule, CommonModule]
 })
 export class CustomerInfoComponent implements OnInit {
   customerId: string = ''; // ID do cliente fornecido pelo usuário
