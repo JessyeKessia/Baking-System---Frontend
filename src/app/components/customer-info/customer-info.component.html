@@ -1,5 +1,12 @@
-<div>
+<div class="customer-info">
   <h2>Customer Information</h2>
+
+  <form (submit)="fetchCustomerInfo()">
+    <label for="customerId">Customer ID:</label>
+    <input type="text" id="customerId" [(ngModel)]="customerId" name="customerId" required>
+    <button type="submit">Search</button>
+  </form>
+
   <div *ngIf="customer">
     <p><strong>ID:</strong> {{ customer?.id }}</p>
     <p><strong>Name:</strong> {{ customer?.fullName }}</p>
@@ -15,7 +22,6 @@
       </li>
     </ul>
   </div>
-  <div *ngIf="!customer">
-    <p>No customer information available.</p>
-  </div>
+
+
 </div>
