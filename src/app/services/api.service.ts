@@ -28,4 +28,12 @@ export class ApiService {
   getTransactions(accountNumber: string): Observable<Transaction[]> {
     return this.http.get<Transaction[]>(`${this.baseUrl}/accounts/${accountNumber}/transactions`);
   }
+  
+  deposit(accountId: string, amount: number): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/accounts/deposit`, { accountId, amount });
+  }
+
+  withdraw(accountId: string, amount: number): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/accounts/withdraw`, { accountId, amount });
+  }
 }
